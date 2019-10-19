@@ -1,6 +1,6 @@
 # clerp-cloud
 
-> My first-rate Nuxt.js project
+> CL-ERP-CLOUD WEBSITE
 
 ## Build Setup
 

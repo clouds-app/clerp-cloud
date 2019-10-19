@@ -9,7 +9,7 @@
             <el-button type="danger">危险按钮</el-button>
       </el-row>
     <div>  
-      <Counter props1='infer data form index' />
+  
       <h1>Hello world!这是我的第一个成功NUXT APP</h1>
   </div>
    <div class="login-container">
