@@ -34,8 +34,12 @@ module.exports = {
   /*
   ** Nuxt.js dev-modules
   */
-  buildModules: [
-  ],
+  'buildModules': [
+  ['@nuxt/typescript-build', {
+    typeCheck: true,
+   // ignoreNotFoundWarnings: true
+  }]
+],
   /*
   ** Nuxt.js modules
   */
