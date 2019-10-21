@@ -21,7 +21,7 @@
              密码:
           <input v-model="loginForm.password" type="text" placeholder="请输入密码" />
           </p>
-        <button @click="getUUId()">登陆</button>
+        <button @click="login()">登陆</button>
     </div>
 </div>
   

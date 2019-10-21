@@ -11,7 +11,9 @@ const errObj =(msg) =>{
 }
 
 export const state = () => ({
-    userNameMd5:''
+    userNameMd5:'',
+    token :'',
+    menuList:{},
 })
   
 export const getters = {
@@ -20,32 +22,48 @@ export const getters = {
     }
 }
 export const mutations = {
-    SET_USERNAMEMD5(state,userNameMd5) {
-      /**
-       * @desc user 描述
-       *
-       * @params 参数
-       *
-       * @return 返回
-       *
-       * @author Andy Huang
-       *
-       * @created 2019/10/21 15:39:18
-       */
-        state.userNameMd5 = userNameMd5;
-        setUserNameMd5(userNameMd5);
+    SET_USERNAMEMD5(state,data) {
+        state.userNameMd5 = data;
+        setUserNameMd5(data);
+    },
+    SET_TOKEN(state,data) {
+        state.token = data;
+        setToken(data);
+    },
+    SET_MENU(state,data) {
+        state.menuList = data;
+        setMenuList(data);
     }
 }
 
 export const actions = {
     async getUserNameMd5_action({commit},userId) {
-        //
         try {
             const resObj = await getValidatorToken(userId);
             commit('SET_USERNAMEMD5',resObj.data)
             return Promise.resolve(resObj);
         } catch (error) {
            let errRes=errObj(error)
+            return Promise.resolve(errRes);
+        }
+      },
+      async handleLogin_action({commit},params) {
+        try {
+            const resObj = await login(params);
+            commit('SET_TOKEN',resObj.data.token)
+            return Promise.resolve(resObj);
+        } catch (error) {
+            let errRes=errObj(error)
+            return Promise.resolve(errRes);
+        }
+      },
+      async getMenuByToken_action({commit}) {
+        try {
+            const resObj = await getMenuByToken();
+            commit('SET_MENU',resObj)
+            return Promise.resolve(resObj);
+        } catch (error) {
+            let errRes=errObj(error)
             return Promise.resolve(errRes);
         }
       }

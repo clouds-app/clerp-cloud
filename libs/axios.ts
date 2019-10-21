@@ -1,6 +1,6 @@
 import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
 import config from '@/config';
-import { getToken } from '@/utils/cookies';
+import { getToken,removeToken } from '@/utils/cookies';
 
 class HttpRequest {
 
@@ -58,6 +58,7 @@ public async request(options: AxiosRequestConfig) {
       }
       return config;
     }, (error: any) => {
+      
       // tslint:disable-next-line: no-console
       console.error('请求拦截 reject' + error);
       return Promise.reject(error);
@@ -79,7 +80,7 @@ public async request(options: AxiosRequestConfig) {
       if (url) {
         this.destroy(url);
       }
-      // debugger
+      removeToken() //清除Token
       // tslint:disable-next-line: no-console
       console.error('响应拦截' + error);
        // return Promise.reject(error);

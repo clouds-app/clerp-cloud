@@ -1,6 +1,6 @@
 import axios from '@/libs/api.request';
 import Qs from 'qs';
-
+const _reqUrl='/api'
 
 /**
  * @desc getValidatorToken 描述 获取加密Token字符串
@@ -19,7 +19,7 @@ export const getValidatorToken = (userId: string) => {
       userId,
     };
     return axios.request({
-      url: '/api/user/validatorToken',
+      url: `${_reqUrl}/user/validatorToken`,
       data,
       method: 'post',
       // tslint:disable-next-line: no-shadowed-variable
@@ -42,7 +42,7 @@ export const getValidatorToken = (userId: string) => {
  */
 export const login = (data: { userId: string, pwd: string }) => {
    return axios.request({
-      url: '/api/user/login',
+      url: `${_reqUrl}/user/login`,
       data,
       method: 'post',
       // tslint:disable-next-line: no-shadowed-variable
@@ -65,7 +65,7 @@ export const login = (data: { userId: string, pwd: string }) => {
  */
 export const getMenuByToken = () => {
     return axios.request({
-       url: '/api/user/resourceInfoV2',
+       url: `${_reqUrl}/user/resourceInfoV2`,
        method: 'post',
      });
    };

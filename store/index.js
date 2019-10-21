@@ -44,7 +44,7 @@ export const actions = {
           }
          // console.log(JSON.stringify(context))
           //context.user.userNameMd5 ='11111222'
-          commit('setHello', '111111222')
+         // commit('setHello', '111111222')
          // commit('user/SET_USERNAMEMD5', 'getUserNameMd5111111222')
         // dispatch('','getUserNameMd5111111222')
           //console.log(JSON.stringify(store))
