@@ -41,12 +41,6 @@ export const getValidatorToken = (userId: string) => {
  * @created 2019/10/11 16:27:22
  */
 export const login = (data: { userId: string, pwd: string }) => {
-  //  const { userId, pwd } = userInfo;
-  //   // 参数
-  //  const data = {
-  //     userId,
-  //     pwd,
-  //   };
    return axios.request({
       url: '/api/user/login',
       data,

@@ -21,11 +21,11 @@
              密码:
           <input v-model="loginForm.password" type="text" placeholder="请输入密码" />
           </p>
-        <button>登陆</button>
+        <button @click="getUUId()">登陆</button>
     </div>
 </div>
   
 </template>
-<script lang="ts" src='./index.ts'>
+<script lang="ts" src='@/controller/home.ts'>
 
 </script>

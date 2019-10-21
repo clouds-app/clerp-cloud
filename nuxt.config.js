@@ -32,7 +32,6 @@ module.exports = {
   */
   plugins: [
     {src: '@/plugins/element-ui', ssr: true},
-    //'@/plugins/i18n.js',
     {src: '@/plugins/global-config.js', ssr: false}
   ],
   /*

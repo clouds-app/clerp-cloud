@@ -38,7 +38,7 @@
     "include": [
       "nuxt.config.js",
       // "shims-vue.d.ts",
-      // "pages/**/*.vue",
+       "pages/**/*.vue",
        "*/**/*.ts",
       // "tests/**/*.ts",
     ],
