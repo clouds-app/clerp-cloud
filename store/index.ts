@@ -20,6 +20,6 @@ export const getters = {
 
 export const actions = {
   add (context: any) {
-    context.commit('SET_LANG')
+   // context.commit('SET_LANG')
   }
 }
