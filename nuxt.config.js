@@ -1,6 +1,5 @@
-
 module.exports = {
-  mode: 'universal',
+  mode: 'universal', //ssr
   /*
   ** Headers of the page
   */
@@ -25,11 +24,15 @@ module.exports = {
   css: [
     'element-ui/lib/theme-chalk/index.css'
   ],
+  router: {
+   // middleware: 'i18n'
+  },
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/element-ui',
+    {src: '@/plugins/element-ui', ssr: true},
+    //'@/plugins/i18n.js',
     {src: '@/plugins/global-config.js', ssr: false}
   ],
   /*
@@ -45,8 +48,11 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    ['nuxt-i18n-module', {
+      languages: ['cn', 'en']
+    }],
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios','@nuxtjs/proxy',
+    '@nuxtjs/axios',
   ],
   /*
   ** Axios module configuration
@@ -79,6 +85,6 @@ module.exports = {
     */
     extend (config, ctx) {
     },
-    vendor: ['axios','vue-i18n'] //为防止重复打包
+    vendor: ['axios'] //为防止重复打包
     }
 }

@@ -32,7 +32,7 @@
       "types": [
         "@nuxt/types",
         "@types/node",
-        "nuxt-i18n"
+         "nuxt-i18n"
       ]
     },
     "include": [
